@@ -2,7 +2,7 @@
 
 namespace qFuturo\Http\Controllers;
 
-use Illuminate\Http\Request;
+use Request;
 
 use qFuturo\Option;
 use qFuturo\Http\Requests;
@@ -37,9 +37,11 @@ class OptionController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
+        $input = Request::all();
+        Option::create($input);
+        return redirect('option');     
     }
 
     /**

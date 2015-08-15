@@ -22,5 +22,8 @@ Route::get ('test', function(){
 Route::get ('login', 'LoginController@login');
 Route::get ('mobile', 'MobileController@forapp');
 
-
+/*Route::get('option','OptionController@index');
+Route::get('option/create','OptionController@create');
+Route::get('option/{id}','OptionController@show');
+Route::post('option','OptionController@store');*/
 Route::resource('option','OptionController');
