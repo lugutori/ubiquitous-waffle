@@ -12,5 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
+
+Route::get ('test', function(){
+	return "SOMETHING SOMETHING DARK SIDE";
+});
+
+Route::get ('login', 'LoginController@login');
+Route::get ('mobile', 'MobileController@forapp');
+
+
+Route::resource('option','OptionController');
