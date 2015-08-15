@@ -140,9 +140,9 @@ return [
         /*
          * Application Service Providers...
          */
-        App\Providers\AppServiceProvider::class,
-        App\Providers\EventServiceProvider::class,
-        App\Providers\RouteServiceProvider::class,
+        qFuturo\Providers\AppServiceProvider::class,
+        qFuturo\Providers\EventServiceProvider::class,
+        qFuturo\Providers\RouteServiceProvider::class,
 
     ],
 

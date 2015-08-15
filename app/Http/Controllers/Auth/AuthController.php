@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Auth;
+namespace qFuturo\Http\Controllers\Auth;
 
-use App\User;
+use qFuturo\User;
 use Validator;
-use App\Http\Controllers\Controller;
+use qFuturo\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 

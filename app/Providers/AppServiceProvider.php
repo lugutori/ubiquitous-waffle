@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Providers;
+namespace qFuturo\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
