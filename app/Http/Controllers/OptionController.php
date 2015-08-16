@@ -17,7 +17,7 @@ class OptionController extends Controller
      */
     public function index()
     {
-        $options= Option::all();
+        $options= Option::latest()->get();
         return view('options.index',compact('options'));
     }
 
@@ -39,8 +39,8 @@ class OptionController extends Controller
      */
     public function store()
     {
-        $input = Request::all();
-        Option::create($input);
+        
+        Option::create(Request::all());
         return redirect('option');     
     }
 
