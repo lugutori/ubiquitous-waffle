@@ -3,32 +3,7 @@
 @section('content')
 <H1>SOY CREAR</H1>
 {!! Form::open(['url'=>'option']) !!}
-<div class="form-group">
-	{!! Form::label('codigo','Codigo:') !!}
-	{!! Form::text('codigo',null,['class'=>'form-control', 'foo'=>'bar']) !!}
-</div>
-<div class="form-group">
-	{!! Form::label('cuerpo','Cuerpo:') !!}
-	{!! Form::textarea('cuerpo',null,['class'=>'form-control', 'foo'=>'bar']) !!}
-</div>
-<div class="form-group">
-	{!! Form::label('correcta','Es la opcion Correcta:') !!}<br/>
-	{!! Form::label('correcta','SI:') !!}
-	{!! Form::radio('correcta', 'true') !!}
-	{!! Form::label('correcta','NO:') !!}					
-	{!! Form::radio('correcta', 'false', true) !!}
-</div>
-<div class="form-group">
-	{!! Form::submit('Agregar Opcion',['class'=>'btn btn-primary form-control']) !!}		
-</div>
-
+@include('options._form',['submitButtonText'=>'Agregar Opción'])
 {!! Form::close() !!}
-@if ($errors->any())
-<ul class="alert alert-danger">
-	@foreach($errors->all() as $error)
-	<li>{{$error}}</li>
-
-	@endforeach
-</ul>
-@endif	
+@include('errors.list')
 @stop

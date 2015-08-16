@@ -2,7 +2,7 @@
 
 namespace qFuturo\Http\Controllers;
 
-use Request;
+use Illuminate\Http\Request;
 
 use qFuturo\Option;
 use qFuturo\Http\Requests;
@@ -37,7 +37,7 @@ class OptionController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Requests\CreateOptionRequest $request)
+    public function store(Requests\OptionRequest $request)
     {
         
         Option::create($request->all());
@@ -66,8 +66,8 @@ class OptionController extends Controller
      */
     public function edit($id)
     {
-        $option = Article::where(['codigo'=>$id])->firstOrFail();
-        return view('options.edit')
+        $option = Option::where(['codigo'=>$id])->firstOrFail();
+        return view('options.edit',compact('option'));
     }
 
     /**
@@ -77,9 +77,12 @@ class OptionController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\OptionRequest $request, $id)
     {
-        //
+        $option= Option::findOrFail($id);
+        $option->update($request->all());
+        return redirect('option'); 
+
     }
 
     /**

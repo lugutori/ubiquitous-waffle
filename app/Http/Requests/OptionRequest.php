@@ -4,7 +4,7 @@ namespace qFuturo\Http\Requests;
 
 use qFuturo\Http\Requests\Request;
 
-class CreateOptionRequest extends Request
+class OptionRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
