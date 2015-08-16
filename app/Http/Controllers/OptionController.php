@@ -37,10 +37,10 @@ class OptionController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store()
+    public function store(Requests\CreateOptionRequest $request)
     {
         
-        Option::create(Request::all());
+        Option::create($request->all());
         return redirect('option');     
     }
 
@@ -53,7 +53,7 @@ class OptionController extends Controller
     public function show($id)
     {
         
-        $option = Option::where(['codigo'=>$id])->first();
+        $option = Option::where(['codigo'=>$id])->firstOrFail();
         //dd($option);
         return view('options.show',compact('option'));
     }
@@ -66,7 +66,8 @@ class OptionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $option = Article::where(['codigo'=>$id])->firstOrFail();
+        return view('options.edit')
     }
 
     /**
