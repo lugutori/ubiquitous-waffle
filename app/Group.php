@@ -4,15 +4,19 @@ namespace qFuturo;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Dimension extends Model
+class Group extends Model
 {
 	protected $fillable = 
 	[
 	'name',
 	];
-	public function groups()
+    public function categories()
     {
-        return $this->hasMany('qFuturo\Group');
+        return $this->hasMany('qFuturo\Category');
+    }
+    public function dimension()
+    {
+        return $this->belongsTo('qFuturo\Dimension');
     }
     public function questions()
     {

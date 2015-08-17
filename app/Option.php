@@ -9,9 +9,12 @@ class Option extends Model
     //
 	protected $fillable = 
 	[
-	'codigo',
-	'cuerpo',
-	'dimension',
-	'correcta'
+	'body',
+	'is_right',
 	];
+	public function question()
+	{
+		return $this->belongsTo('qFuturo\Question');
+	}
 }
+

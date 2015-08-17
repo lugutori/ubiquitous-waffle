@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOptionsTable extends Migration
+class CreateGroupsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,11 @@ class CreateOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('groups', function (Blueprint $table) {
             $table->increments('id');
-            $table->boolean('correcta');
-            $table->text('cuerpo');
-            $table->string('codigo')->unique();
-            $table->string('dimension')->nullable();
+            $table->string('name');
+            $table->integer('dimension_id')->unsigned();
+            $table->foreign('dimension_id')->references('id')->on('dimensions');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('options');
+        Schema::drop('groups');
     }
 }
